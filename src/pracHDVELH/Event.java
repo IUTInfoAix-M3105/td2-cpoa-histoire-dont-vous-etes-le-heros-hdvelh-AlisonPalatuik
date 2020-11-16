@@ -113,6 +113,9 @@ public class Event extends NodeMultiple {
 	public int getId() {
 		/* TO BE COMPLETED */
 	}
+	public Event(String data) {
+		super(data);
+	}
 
 	/* Methods */
 	/* TO BE COMPLETED */
