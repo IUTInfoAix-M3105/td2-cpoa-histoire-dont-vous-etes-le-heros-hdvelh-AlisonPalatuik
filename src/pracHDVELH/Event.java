@@ -36,7 +36,23 @@ public class Event extends NodeMultiple { //Event hérite de NodeMultiple
 	 * The daughter's index chosen for the next event.
 	 */
 	private int chosenPath;
+	/**
+	 * The daughter's index chosen for the next event.
+	 */
+	private int id;
+	/**
+	 * The class variable to store the last identifier used.
+	 */
+	static private int lastId = -1;
 
+	/* CONSTRUCTOR */
+	public Event(GUIManager gui, String data) { //la premiere méthode d'un constructeur est toujours un super
+		super(data);
+		chosenPath = -1;
+		this.gui = gui;
+		this.reader = gui.getInputReader();
+		id = ++lastId;
+	}
 
 	/**
 	 * @return the playerAnswer
@@ -49,7 +65,7 @@ public class Event extends NodeMultiple { //Event hérite de NodeMultiple
 	 * @param playerAnswer the playerAnswer to set
 	 */
 	public void setPlayerAnswer(String playerAnswer) {
-		playerAnswer = playerAnswer;
+		this.playerAnswer = playerAnswer;
 	}
 
 	/**
@@ -63,7 +79,7 @@ public class Event extends NodeMultiple { //Event hérite de NodeMultiple
 	 * @param reader the reader to set
 	 */
 	public void setReader(Scanner reader) {
-		reader = reader;
+		this.reader = reader;
 	}
 
 	/**
@@ -133,6 +149,7 @@ public class Event extends NodeMultiple { //Event hérite de NodeMultiple
 	public int getId() {
 		/* TO BE COMPLETED */
 	}
+
 	public Event(String data) {
 		super(data);
 	}
