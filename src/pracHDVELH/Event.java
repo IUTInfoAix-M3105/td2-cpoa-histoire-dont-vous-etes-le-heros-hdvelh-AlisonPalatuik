@@ -155,11 +155,12 @@ public class Event extends NodeMultiple { //Event hérite de NodeMultiple
 
 	/* Methods */
 	/* TO BE COMPLETED */
-	public void run() {
+	public Event run() {
 		gui.outputln(getData());
 		gui.output(PROMPT_ANSWER);
 		playerAnswer = reader.next();
 		chosenPath = interpretAnswer();
+		return getDaughter(chosenPath);
 	}
 }
 
