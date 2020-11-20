@@ -46,6 +46,9 @@ public class Event extends NodeMultiple { //Event hérite de NodeMultiple
 	static private int lastId = -1;
 
 	/* CONSTRUCTOR */
+	public Event() { //la premiere méthode d'un constructeur est toujours un super
+		this(new GUIManager(), null);
+	}
 	public Event(GUIManager gui, String data) { //la premiere méthode d'un constructeur est toujours un super
 		super(data);
 		chosenPath = -1;
@@ -86,14 +89,14 @@ public class Event extends NodeMultiple { //Event hérite de NodeMultiple
 	 * @return the chosenPath
 	 */
 	public int getChosenPath() {
-		/* TO BE COMPLETED */
+		return chosenPath;
 	}
 
 	/**
 	 * @param chosenPath the chosenPath to set
 	 */
 	public void setChosenPath(int chosenPath) {
-		/* TO BE COMPLETED */
+		this.chosenPath = chosenPath;
 	}
 
 	/* Methods */
@@ -133,29 +136,30 @@ public class Event extends NodeMultiple { //Event hérite de NodeMultiple
 	 * @return the gui
 	 */
 	public GUIManager getGui() {
-		/* TO BE COMPLETED */
+		return gui;
 	}
 
 	/**
 	 * @param gui the gui to set
 	 */
 	public void setGui(GUIManager gui) {
-		/* TO BE COMPLETED */
+		this.gui = gui;
 	}
 
 	/**
 	 * @return the id
 	 */
 	public int getId() {
-		/* TO BE COMPLETED */
-	}
-
-	public Event(String data) {
-		super(data);
+		return id;
 	}
 
 	/* Methods */
 	/* TO BE COMPLETED */
+	public void run() {
+		gui.outputln(getData());
+		gui.output(PROMPT_ANSWER);
+		playerAnswer = reader.next();
+		chosenPath = interpretAnswer();
 	}
 }
 
