@@ -13,40 +13,57 @@ import myUtils.ErrorNaiveHandler;
  * @author prost
  *
  */
-public class Event extends NodeMultiple {
+public class Event extends NodeMultiple { //Event hérite de NodeMultiple
 	public static final String ERROR_MSG_UNEXPECTED_END = "Sorry, for some unexpected reason the story ends here...";
 	public static final String PROMPT_ANSWER = "Answer: ";
 	public static final String WARNING_MSG_INTEGER_EXPECTED = "Please input a integer within range!";
-	private String m_PlayerAnswer;
-	private Scanner m_Reader;
-	private NodeMultiple m_NextNode;
+
+	/* FIELDS */
+	/**
+	 * The text version of the player's current answer.
+	 */
+	private String playerAnswer;
+
+	/**
+	 * The Graphical User Interface.
+	 */
+	private GUIManager gui;
+	/**
+	 * The input reader.
+	 */
+	private Scanner reader;
+	/**
+	 * The daughter's index chosen for the next event.
+	 */
+	private int chosenPath;
+
 
 	/**
 	 * @return the playerAnswer
 	 */
 	public String getPlayerAnswer() {
-		return m_PlayerAnswer;
+		return playerAnswer;
 	}
 
 	/**
 	 * @param playerAnswer the playerAnswer to set
 	 */
 	public void setPlayerAnswer(String playerAnswer) {
-		m_PlayerAnswer = playerAnswer;
+		playerAnswer = playerAnswer;
 	}
 
 	/**
 	 * @return the reader
 	 */
 	public Scanner getReader() {
-		return m_Reader;
+		return reader;
 	}
 
 	/**
 	 * @param reader the reader to set
 	 */
 	public void setReader(Scanner reader) {
-		m_Reader = reader;
+		reader = reader;
 	}
 
 	/**
