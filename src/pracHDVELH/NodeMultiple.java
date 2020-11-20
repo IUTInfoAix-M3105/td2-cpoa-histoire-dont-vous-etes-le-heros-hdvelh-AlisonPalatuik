@@ -117,14 +117,14 @@ public class NodeMultiple {
 	 * @return the content data
 	 */
 	public Object getData() {
-		/* TO BE COMPLETED */
+		return data;
 	}
 
 	/**
-	 * @param data
+	 * @param Data
 	 */
-	public void setData(Object data) {
-		/* TO BE COMPLETED */
+	public void setData(Object Data) {
+		data = Data;
 	}
 
 	/**

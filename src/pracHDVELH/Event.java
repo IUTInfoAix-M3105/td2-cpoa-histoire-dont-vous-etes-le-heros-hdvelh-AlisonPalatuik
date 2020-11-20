@@ -17,33 +17,36 @@ public class Event extends NodeMultiple {
 	public static final String ERROR_MSG_UNEXPECTED_END = "Sorry, for some unexpected reason the story ends here...";
 	public static final String PROMPT_ANSWER = "Answer: ";
 	public static final String WARNING_MSG_INTEGER_EXPECTED = "Please input a integer within range!";
+	private String m_PlayerAnswer;
+	private Scanner m_Reader;
+	private NodeMultiple m_NextNode;
 
 	/**
 	 * @return the playerAnswer
 	 */
 	public String getPlayerAnswer() {
-		/* TO BE COMPLETED */
+		return m_PlayerAnswer;
 	}
 
 	/**
 	 * @param playerAnswer the playerAnswer to set
 	 */
 	public void setPlayerAnswer(String playerAnswer) {
-		/* TO BE COMPLETED */
+		m_PlayerAnswer = playerAnswer;
 	}
 
 	/**
 	 * @return the reader
 	 */
 	public Scanner getReader() {
-		/* TO BE COMPLETED */
+		return m_Reader;
 	}
 
 	/**
 	 * @param reader the reader to set
 	 */
 	public void setReader(Scanner reader) {
-		/* TO BE COMPLETED */
+		m_Reader = reader;
 	}
 
 	/**
