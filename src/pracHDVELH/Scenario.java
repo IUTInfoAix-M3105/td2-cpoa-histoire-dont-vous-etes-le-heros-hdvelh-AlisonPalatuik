@@ -88,6 +88,17 @@ public class Scenario {
 			return Integer.parseInt(playerAnswer) - 1;
 		}
 
+		public boolean isInRange(int Index) {
+			if (index < 0 || index >= getDaughthers().length) {
+				return false;
+			}
+			int i = 0;
+			while (i < getDaughters().length && getDaughters()[i] != null){
+				i++;
+			}
+			return index < 1;
+		}
+
 		public String run()
 		{
 			Event nextStep;
