@@ -5,6 +5,8 @@
  */
 package pracHDVELH;
 
+import myUtils.ErrorNaiveHandler;
+
 /**
  * @author prost
  *
@@ -73,6 +75,33 @@ public class Scenario {
 		event4.addDaughter(event2);
 		event4.addDaughter(endEvent);
 		event4.addDaughter(event3);
+
+		public int interpretAnswer () {
+			if (playerAnswer == null){
+				ErrorNaiveHandler.abort("Wrong usage of interpretAnswer() with a null or empty current answer");
+			}
+			while(playerAnswer.isEmpty() || !playerAnswer.matches("[0-9]") || !isInRange(Integer.parseInt(playerAnswer) - 1)) {
+				gui.outputln(WARNING_MSG_INTEGER_EXPECTED);
+				gui.output(PROMPT_ANSWER);
+				playerAnswer = reader.next();
+			}
+			return Integer.parseInt(playerAnswer) - 1;
+		}
+
+		public String run()
+		{
+			Event nextStep;
+			if (nextStep = getHead()) == null) {
+				return MSG_EMPTY_SCENARIO;
+		}
+
+			while (!nextStep.isFinal()) {
+				nextStep = nextStep.run();
+			}
+			gui.outputln(nextStep.getData());
+			return MSG_FINALE;
+
+		}
 
 		System.out.println(scenario.run());
 	}
